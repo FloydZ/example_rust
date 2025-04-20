@@ -1,0 +1,33 @@
+cargo-features = ["edition2024", "profile-rustflags"]
+
+[package]
+name = "examplerust"
+version = "0.1.0"
+authors = ["Floyd <zweydfg8@rub.de>"]
+edition = "2024"
+
+[alias]     # command aliases
+b = "build"
+c = "check"
+t = "test"
+r = "run"
+
+[dependencies]
+puffin="0.4.0"
+puffin-imgui = "0.7.0"
+const_fn = "0.4.5"
+
+[dev-dependencies]
+criterion = "0.3.4"
+
+[[bench]]
+name = "bench1"
+harness = false
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+opt-level = 3
+rustflags=["-C", "target-cpu=native"]
+panic = "abort"
+#debug = true
