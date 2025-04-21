@@ -83,6 +83,13 @@ $ ./target/.../<binary>-bolt-instrumented
 $ cargo pgo bolt optimize --with-pgo
 ```
 
+
+cargo-expand
+-----
+[cargo-expand](https://github.com/dtolnay/cargo-expand) is a tool which shows the result of macro expansion
+
+
+
 Cargo Configuration
 -----
 

@@ -21,8 +21,8 @@ stdenv.mkDerivation {
     cargo-criterion
     cargo-flamegraph
     cargo-pgo
+    cargo-expand
   ] ++ (lib.optionals pkgs.stdenv.isLinux ([
-    # TODO show application
     cargo-valgrind  # does not exist on apple
     cargo-clone     # cannot be compiled on apple
   ]));
